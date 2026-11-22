@@ -1,0 +1,57 @@
+{
+  "name": "d2l-mcp",
+  "version": "0.1.0",
+  "description": "Free, open-source Brightspace (D2L) MCP server. Signs in with your own Brightspace session and gives Claude, Cursor, Codex and other MCP apps your courses, due dates, assignments, grades, announcements and quizzes.",
+  "type": "module",
+  "bin": {
+    "d2l-mcp": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@12.21.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "brightspace",
+    "d2l",
+    "desire2learn",
+    "brightspace-mcp",
+    "d2l-mcp",
+    "lms",
+    "students",
+    "claude",
+    "cursor",
+    "codex",
+    "education"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chat2L/brightspace-mcp.git"
+  },
+  "homepage": "https://github.com/Chat2L/brightspace-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/Chat2L/brightspace-mcp/issues"
+  },
+  "author": "Chat2L (https://www.chat2l.com)",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  }
+}
